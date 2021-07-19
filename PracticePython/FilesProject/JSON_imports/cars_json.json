@@ -1,0 +1,16 @@
+{
+    "cars": [
+        {
+            "model": "Ford Fiesta",
+            "make": "Ford"
+        },
+        {
+            "model": "Ford Mustang GT",
+            "make": "Ford"
+        },
+        {
+            "model": "Hyundai Verna",
+            "make": "Hyundai"
+        }
+    ]
+}

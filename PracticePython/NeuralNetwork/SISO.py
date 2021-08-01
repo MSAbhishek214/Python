@@ -4,7 +4,6 @@ class SISO:
     """
     #class variables
     weight = 0.0
-    input_x = 0.0
     ALPHA = 0.1
     output_y = 0.0
     
@@ -22,17 +21,28 @@ class SISO:
         return input_x * self.weight
 
 
-    def compare(self, y, y1):
-        return y - y1
+    def compare(self, output_y, predicted_y1):
+        return output_y - predicted_y1
 
 
-    def learn(self, weight, alpha, delta):
-        return weight + alpha * delta
+    def learn(self, weight, delta):
+        return weight + self.ALPHA * delta
 
 
-def train():
-    weight = 0.85
-    y = 12
-    siso = SISO(weight, y)
-    x = siso.input_node(10)
-    y1 = siso.predict(x)
+def train_NN(weight, y, epochs):
+    adjusted_weight = weight
+    for i in range(epochs):
+        siso = SISO(adjusted_weight, y)
+        input_y = siso.input_node(y)
+        y1 = siso.predict(input_y)
+        delta = siso.compare(y, y1)
+        if delta == 0.00:
+            break
+        adjusted_weight = siso.learn(adjusted_weight, delta)
+        print(f'{i} --> y: {input_y}, y1: {y1}, delta: {delta:.2f}, weight: {weight}, adjusted weight: {adjusted_weight}')
+
+
+weight = 0.1
+y = 12
+epochs = 10000000000000000000000
+train_NN(weight, y, epochs)

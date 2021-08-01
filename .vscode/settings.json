@@ -11,5 +11,8 @@
     "python.autoComplete.extraPaths": [
     
     ],
-    "jupyter.jupyterServerType": "local"
+    "jupyter.jupyterServerType": "local",
+    "python.languageServer": "Pylance",
+    "python.analysis.extraPaths": [],
+    "python.analysis.completeFunctionParens": true
 }

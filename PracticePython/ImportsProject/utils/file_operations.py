@@ -6,3 +6,7 @@ def save_to_file(content, filename):
 def read_file(filename):
     with open(filename, 'r') as file:
         return file.read()
+
+
+if __name__ == '__main__':
+    print('This is file operation module')

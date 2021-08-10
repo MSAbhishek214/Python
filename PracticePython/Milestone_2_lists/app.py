@@ -1,8 +1,8 @@
 '''
 Our main application interface code goes here
 '''
-# import the database module to make use of the database methods
-from utils import database
+# import the services module that in itself communicates with the database module
+from utils import services
 MENU_PROMPT = """
 Book store actions are given below. Choose one of them to perform specific action!
 

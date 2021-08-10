@@ -1,27 +1,22 @@
 """
-This python file is to store data into and retrieve from lists (which are basically in memory database objects, almost)
-Data Structure used: Lists
-Author: Abhishek Rotti
+This module has the services associated with a library and deals with the user interaction
 """
-# Define an empty list for the books
-books = []
+from utils import database
 
 
-def add_book(book_name, book_author):
+def add_book_service():
     """ 
-    A method to add a book to a list, given its name.
+    A method that takes in the user inputs needed for adding a book to the database.
     """
-    books.append(
-        {
-            'name': book_name,
-            'author': book_author,
-            'read': False
-        }
-    )
-    return books[-1]
+    book_name = input('Enter name of the book: ')
+    book_author = input('Enter author of the book: ')
+
+    database.add_book(book_name, book_author)
+
+    print('Book added successfully')
 
 
-def list_books():
+def list_books_service():
     """ 
     A method that returns all books currently in a list.
     """
@@ -29,7 +24,7 @@ def list_books():
         print('{} by {}'.format(book['name'], book['author']))
 
 
-def mark_as_read():
+def mark_as_read_service():
     """ 
     A method that marks a book as read by settings its read variable boolean value to True, given a book name.
     """
@@ -41,7 +36,8 @@ def mark_as_read():
 
     print(f'Book {name} marked as read.')
 
-def delete_book():
+
+def delete_book_service():
     """
     A method that deletes a book by removing the book from the list, given book name.
     """

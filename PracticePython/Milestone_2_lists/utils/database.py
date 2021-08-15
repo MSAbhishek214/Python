@@ -25,30 +25,24 @@ def list_books():
     """ 
     A method that returns all books currently in a list.
     """
-    for book in books:
-        print('{} by {}'.format(book['name'], book['author']))
+    return books
 
 
-def mark_as_read():
+def mark_as_read(name):
     """ 
     A method that marks a book as read by settings its read variable boolean value to True, given a book name.
     """
-    name = input('Enter name of the book you want to mark as read: ')
 
     for book in books:
         if book['name'] == name:
             book['read'] = True
 
-    print(f'Book {name} marked as read.')
 
-def delete_book():
+def delete_book(name):
     """
     A method that deletes a book by removing the book from the list, given book name.
     """
     global books
 
-    name = input('Enter name of the book you wish to delete from library: ')
-
     books = [book for book in books if book['name'] != name]
 
-    print(f'Book {name} removed from library.')

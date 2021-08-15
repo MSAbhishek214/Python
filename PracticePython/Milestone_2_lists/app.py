@@ -16,10 +16,10 @@ Enter your choice: """
 
 # a dictionary of user options with related actions
 user_options = {
-    'a': database.add_book,
-    'l': database.list_books,
-    'r': database.mark_as_read,
-    'd': database.delete_book
+    'a': services.add_book_service,
+    'l': services.list_books_service,
+    'r': services.mark_as_read_service,
+    'd': services.delete_book_service
 }
 
 # menu for our application

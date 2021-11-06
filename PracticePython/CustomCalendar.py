@@ -1,4 +1,4 @@
-#Lets consider Sept 1 as starting day of the year
+# Lets consider Sept 1 as starting day of the year
 
 day = 1
 week = 1
@@ -12,4 +12,3 @@ DAYS_IN_MONTH = 28
 user_input = input('Enter a date in DD/MM/YYYY format: ')
 
 user_date, user_month, user_year = user_input.split('/')
-

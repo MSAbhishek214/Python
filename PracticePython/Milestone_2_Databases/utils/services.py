@@ -1,7 +1,14 @@
 """
 This module has the services associated with a library and deals with the user interaction
 """
-from utils import database
+from PracticePython.Milestone_2_Databases.utils import database
+
+
+def create_book_table_service():
+    """
+    A method that takes no arguments but calls the database table creation method
+    """
+    database.create_book_table()
 
 
 def add_book_service():
@@ -20,7 +27,7 @@ def list_books_service():
     """ 
     A method that returns all books currently in a list.
     """
-    library = database.list_books()
+    library = database.get_all_books()
     
     if len(library) == 0:
         print("Your library looks empty. Go ahead and add a few books to it!")

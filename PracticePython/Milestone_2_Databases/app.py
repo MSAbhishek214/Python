@@ -1,8 +1,10 @@
-'''
+"""
 Our main application interface code goes here
-'''
+"""
+
 # import the services module that in itself communicates with the database module
 from utils import services
+
 MENU_PROMPT = """
 Book store actions are given below. Choose one of them to perform specific action!
 
@@ -22,8 +24,10 @@ user_options = {
     'd': services.delete_book_service
 }
 
+
 # menu for our application
 def menu():
+    services.create_book_table_service()
     user_input = input(MENU_PROMPT)
     while user_input != 'q':
         if user_input in user_options:
@@ -35,5 +39,5 @@ def menu():
         user_input = input(MENU_PROMPT)
 
 
-# Run the menu indefinetly until user selects q
+# Run the menu indefinitely until user selects q
 menu()

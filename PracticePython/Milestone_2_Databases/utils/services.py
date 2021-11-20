@@ -4,14 +4,14 @@ This module has the services associated with a library and deals with the user i
 from PracticePython.Milestone_2_Databases.utils import database
 
 
-def create_book_table_service():
+def create_book_table_service() -> None:
     """
     A method that takes no arguments but calls the database table creation method
     """
     database.create_book_table()
 
 
-def add_book_service():
+def add_book_service() -> None:
     """ 
     A method that takes in the user inputs needed for adding a book to the database.
     """
@@ -23,7 +23,7 @@ def add_book_service():
     print('Book added successfully')
 
 
-def list_books_service():
+def list_books_service() -> None:
     """ 
     A method that returns all books currently in a list.
     """
@@ -36,7 +36,7 @@ def list_books_service():
             print('{} by {}'.format(book['name'], book['author']))
 
 
-def mark_as_read_service():
+def mark_as_read_service() -> None:
     """ 
     A method that marks a book as read by settings its read variable boolean value to True, given a book name.
     """
@@ -47,7 +47,7 @@ def mark_as_read_service():
     print(f'Book {name} marked as read.')
 
 
-def delete_book_service():
+def delete_book_service() -> None:
     """
     A method that deletes a book by removing the book from the list, given book name.
     """
